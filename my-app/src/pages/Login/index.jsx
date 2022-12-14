@@ -3,22 +3,15 @@ import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { useState } from "react"
 import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup"
-
+import { loginSchema } from "../../Components/Schemas/LoginSchema"
 
 export const Login = ({ userLogin }) => {
-
     const [loading, setLoading] = useState(false);
-    const loginSchema = yup.object().shape({
-        email: yup.string().required("O email é obrigatório !"),
-        password: yup.string().required("A senha é obrigatória !")
-    })
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         mode: "onBlur",
         resolver: yupResolver(loginSchema)
     })
-
 
     const submit = (data) => {
         userLogin(data, setLoading)
