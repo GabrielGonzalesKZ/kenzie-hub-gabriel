@@ -4,11 +4,11 @@ import { useForm } from "react-hook-form"
 import { useContext, useState } from "react"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { loginSchema } from "../../Components/Schemas/LoginSchema"
-import { UserContext } from "../../Providers/UserContext"
+import { AuthContext } from "../../Providers/AuthContext"
 
 export const Login = () => {
     const [loading, setLoading] = useState(false);
-    const { userLogin } = useContext(UserContext)
+    const { userLogin } = useContext(AuthContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         mode: "onBlur",
