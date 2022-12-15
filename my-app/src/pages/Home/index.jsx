@@ -1,9 +1,13 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { UserContext } from "../../Providers/UserContext"
 import { StyledHome } from "./styled"
 
-export const Home = ({ user }) => {
+export const Home = () => {
+
+    const { user } = useContext(UserContext)
     return (
-        <StyledHome >
+        <StyledHome className="animate__animated animate__fadeInDown">
             <div className="nav">
                 <h1>Kenzie Hub</h1>
                 <button>{user && <Link to="/login">Sair</Link>}</button>

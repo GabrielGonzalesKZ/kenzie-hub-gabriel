@@ -1,12 +1,14 @@
 import { StyledLogin } from "./styled"
 import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { loginSchema } from "../../Components/Schemas/LoginSchema"
+import { UserContext } from "../../Providers/UserContext"
 
-export const Login = ({ userLogin }) => {
+export const Login = () => {
     const [loading, setLoading] = useState(false);
+    const { userLogin } = useContext(UserContext)
 
     const { register, handleSubmit, formState: { errors } } = useForm({
         mode: "onBlur",
@@ -18,7 +20,7 @@ export const Login = ({ userLogin }) => {
     }
 
     return (
-        <StyledLogin >
+        <StyledLogin className="animate__animated animate__fadeInDown">
             <h1>Kenzie Hub</h1>
             <div>
                 <h4>Login</h4>

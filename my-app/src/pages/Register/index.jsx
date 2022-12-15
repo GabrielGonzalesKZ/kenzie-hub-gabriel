@@ -4,11 +4,12 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useState } from "react"
 import { api } from "../../services/api"
 import { toast } from 'react-toastify';
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { registerSchema } from "../../Components/Schemas/RegisterSchema"
 
 export const Register = () => {
     const [loading, setLoading] = useState(false);
+    const navigate = useNavigate()
     
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
         mode: "onChange",
@@ -29,6 +30,7 @@ export const Register = () => {
             setLoading(true)
             const response = await api.post("/users", formData)
             toast.success("Conta cadastrada com sucesso")
+            navigate("/login")
 
         } catch (error) {
             toast.error("Não foi possível criar sua conta")
@@ -44,7 +46,7 @@ export const Register = () => {
 
     return (
         <>
-            <StyledRegister >
+            <StyledRegister className="animate__animated animate__fadeInDown">
                 <div className="nav">
                     <h1>Kenzie Hub</h1>
                     <button><Link to="/login">Voltar</Link></button>

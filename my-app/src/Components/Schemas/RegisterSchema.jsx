@@ -14,3 +14,4 @@ export const registerSchema = yup.object().shape({
     contact: yup.string().required("O contato é obrigatório !").min(9, "Precisa ter pelo menos 9 dígitos"),
     course_module: yup.string().required("Selecione um módulo"),
 })
+
