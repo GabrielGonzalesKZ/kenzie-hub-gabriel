@@ -6,7 +6,9 @@ import { StyledHome } from "./styled"
 export const Home = () => {
 
     const { user } = useContext(AuthContext)
-    const deletToken = localStorage.removeItem("@TOKEN");
+    const deletToken = () => {
+        localStorage.removeItem("@TOKEN");
+    } 
 
     return (
         <StyledHome className="animate__animated animate__fadeInDown">
