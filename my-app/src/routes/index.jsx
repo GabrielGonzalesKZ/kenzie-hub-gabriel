@@ -1,15 +1,18 @@
 import { Route, Routes, Navigate } from "react-router-dom";
+import { ProtectedRoutes } from "../Components/ProtectedRoutes";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 
-export const RoutesMain = ({ userLogin, user }) => {
-    return (
-        <Routes>
-            <Route path="/register" element={<Register />}></Route>
-            <Route path="/login" element={<Login userLogin={userLogin} />} />
-            <Route path="/home" element={<Home user={user} />} />
-            <Route path="*" element={<Navigate to="/login" />} />
-        </Routes>
-    )
-}
+export const RoutesMain = () => {
+  return (
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="*" element={<Navigate to="/login" />} />
+      <Route element={<ProtectedRoutes />}>
+        <Route path="/register" element={<Register />} />
+        <Route path="/home" element={<Home />} />
+      </Route>
+    </Routes>
+  );
+};

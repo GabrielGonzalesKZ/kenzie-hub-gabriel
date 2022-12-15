@@ -1,18 +1,13 @@
 import { useContext } from "react"
-import { Link, Navigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { AuthContext } from "../../Providers/AuthContext"
 import { StyledHome } from "./styled"
 
 export const Home = () => {
 
-    const { user, loading } = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
-    if(loading) {
-        return null
-    }
-    
     return (
-        user ?
         <StyledHome className="animate__animated animate__fadeInDown">
             <div className="nav">
                 <h1>Kenzie Hub</h1>
@@ -27,6 +22,6 @@ export const Home = () => {
             <div>
                 <h2>Tecnologias em desenvolvimento</h2>
             </div>
-        </StyledHome>: <Navigate to="/login" />
+        </StyledHome>
     )
 }
