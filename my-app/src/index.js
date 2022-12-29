@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { App } from "./App";
-import Providers from "./Providers/Providers";
+import Providers from "./Context/TechContext/Providers";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { AuthContext } from "../../Providers/AuthContext"
+import { Technology } from "../../Components/Technology/Technology"
+import { ContextAPI } from "../../Context/TechContext/ContextAPI"
 import { StyledHome } from "./styled"
 
 export const Home = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user } = useContext(ContextAPI)
     const deletToken = () => {
         localStorage.removeItem("@TOKEN");
     } 
@@ -22,9 +23,7 @@ export const Home = () => {
                     <p>{user.course_module}</p>
                 </div>
             </div>
-            <div>
-                <h2>Tecnologias em desenvolvimento</h2>
-            </div>
+            <Technology />
         </StyledHome>
     )
 }
