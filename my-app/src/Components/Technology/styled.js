@@ -31,7 +31,7 @@ export const StyledTechnology = styled.div`
   }
 
   button:hover {
-    background-color: #343B41;
+    background-color: #343b41;
   }
 
   ul {
@@ -54,7 +54,7 @@ export const StyledTechnology = styled.div`
   }
 
   li:hover {
-    background-color: #343B41;
+    background-color: #343b41;
   }
 
   li p {

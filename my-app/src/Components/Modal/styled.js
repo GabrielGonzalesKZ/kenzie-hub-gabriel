@@ -7,7 +7,7 @@ export const StyledModal = styled.div`
   min-width: 300px;
   background-color: var(--color-grey-3);
   margin: 0 auto;
-  top: 40%;
+  top: 20%;
   display: flex;
   flex-direction: column;
   box-shadow: 0px 4px 40px -10px rgba(0, 0, 0, 0.25);
@@ -35,6 +35,10 @@ export const StyledModal = styled.div`
     cursor: pointer;
   }
 
+  span:hover {
+    color: white;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -58,6 +62,7 @@ export const StyledModal = styled.div`
     font-size: 16.2426px;
     line-height: 26px;
     color: #f8f9fa;
+    border-style: none;
   }
 
   select {
@@ -70,13 +75,14 @@ export const StyledModal = styled.div`
     font-size: 16.2426px;
     line-height: 26px;
     color: #f8f9fa;
+    border-style: none;
   }
 
   button {
-    padding: 0px 22.3336px;
+    padding: 0px 25px;
     height: 48px;
-    background: #ff577f;
-    border: 1.2182px solid #ff577f;
+    background: #59323f;
+    border: 1.2182px solid #59323f;
     border-radius: 4.06066px;
     cursor: pointer;
     font-weight: 500;
@@ -86,6 +92,38 @@ export const StyledModal = styled.div`
   }
 
   button:hover {
-    background: #FF427F;
+    background: #ff427f;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--color-grey-3);
+    padding: 0;
+  }
+
+  .delet {
+    background: #343b41;
+    border: 1.2182px solid #343b41;
+    margin-left: 15px;
+  }
+
+  .delet:hover {
+    background: #868e96;
+    border: 1.2182px solid #868e96;
+  }
+
+  .techName {
+    padding: 0px 16.2426px;
+    height: 48px;
+    border: 1.2182px solid #343b41;
+    background: #343b41;
+    border-radius: 4px;
+  }
+
+  .techName p {
+    font-size: 16.2426px;
+    line-height: 26px;
+    color: #868e96;
   }
 `;

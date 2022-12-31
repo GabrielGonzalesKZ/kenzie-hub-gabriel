@@ -45,7 +45,7 @@ export const StyledHome = styled.main`
     flex-direction: row;
     text-align: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     justify-content: center;
     border-top: 2px solid var(--color-grey-3);
     border-bottom: 2px solid var(--color-grey-3);
@@ -87,9 +87,9 @@ export const StyledHome = styled.main`
     color: var(--color-grey-0);
   }
 
-  @media screen and (max-width: 729px){
+  @media screen and (max-width: 729px) {
     .text {
-        flex-direction: column;
+      flex-direction: column;
     }
   }
 `;

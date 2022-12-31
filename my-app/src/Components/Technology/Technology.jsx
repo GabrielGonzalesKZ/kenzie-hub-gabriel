@@ -1,8 +1,5 @@
-import { TechnologyList } from "../../Context/TechContext/ListTech"
-
+import { TechnologyList } from "../../Context/TechContext/ContextTech";
 
 export const Technology = () => {
-    return (
-        <TechnologyList />
-    )
-}
+  return <TechnologyList />;
+};
